@@ -1,7 +1,7 @@
 // pages/index.js
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
 
