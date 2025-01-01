@@ -9,10 +9,21 @@ export default {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'background-color': 'background-color',
+        'border-color': 'border-color',
+        'color': 'color',
+        'fill': 'fill',
+        'stroke': 'stroke',
+      },
+      transitionDuration: {
+        '1000': '1000ms',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
     },
   },
   plugins: [],

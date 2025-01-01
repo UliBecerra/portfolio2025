@@ -1,7 +1,7 @@
 // pages/index.js
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
 
@@ -63,6 +63,7 @@ const Portfolio = () => {
         <div className="flex justify-between items-center h-16">
           <a href="#" className="text-xl font-bold text-slate-800 dark:text-slate-200">
             {/* Logo or Brand */}
+            Aldo Ulises 
           </a>
   
           {/* Desktop Navigation */}
@@ -82,7 +83,7 @@ const Portfolio = () => {
             ))}
             { (theme === 'light') ? <Sun size={24} onClick={toggleTheme} /> : <Moon size={24} onClick={toggleTheme} /> }
             <button onClick={toggleLanguage} className="ml-4">
-                {language === 'en' ? 'Español' : 'English'}
+                <Languages size={24} /> {language === 'en' ? '🇺🇸' : '🇲🇽'}
               </button>
           </div>
   
