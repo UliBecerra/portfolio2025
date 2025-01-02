@@ -11,9 +11,13 @@
     }
 }
 
-div {
-    transition: background-color 0.75s ease, color 0.75s ease;
+div, nav, button, input, a, section {    
+    transition: background-color 1s ease, color 0.75s ease;
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
 }
+
+#favicon {
+    filter: invert(1);
+  }

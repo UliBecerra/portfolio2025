@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
+import projects from './data/projects.json';
+import Image from 'next/image';
 
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -144,7 +146,7 @@ const Portfolio = () => {
         </p>
         <div className="flex justify-center space-x-4">
           <a
-            href="https://github.com/tuuser"
+            href="https://github.com/UliBecerra"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
@@ -180,6 +182,36 @@ const Portfolio = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Project Card */}
+          {
+            projects.projects.map((project, index) => (
+              <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700" key={index}>
+            {/* <div className="h-48 bg-slate-200 dark:bg-slate-600" /> */}
+            <Image src={`https://raw.githubusercontent.com/UliBecerra/uli-beca-portfolio/refs/heads/main/public${project.image}`} alt={project.title} width={400} height={300} />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2 text-slate-900 dark:text-slate-100">
+                {project.title}
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300 mb-4">
+                {project.description}
+              </p>
+              <div className="flex justify-between items-center">
+                <a
+                  href={project.urls[0].url}
+                  className="text-blue-600 hover:text-blue-700 flex items-center dark:text-blue-400 dark:hover:text-blue-500"
+                >
+                  {t('viewMore')} <ExternalLink size={16} className="ml-1" />
+                </a>
+                <a
+                  href={project.urls[1].url}
+                  className="text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200"
+                >
+                  <Github size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+            ))
+          }
           <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700">
             <div className="h-48 bg-slate-200 dark:bg-slate-600" />
             <div className="p-6">
