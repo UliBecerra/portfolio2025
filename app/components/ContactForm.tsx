@@ -1,4 +1,3 @@
-import { error } from 'console';
 import React, { useState } from 'react';
 import { TFunction } from 'i18next';
 
