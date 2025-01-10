@@ -39,6 +39,7 @@ const ContactForm : React.FC<ChildProps> = ({ t }) => {
     } catch (error) {
       setFormStatus('Hubo un error al enviar el formulario.');
       setIsSubmitting(false);
+      console.log(error);
     }
   };
 
