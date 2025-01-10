@@ -1,13 +1,14 @@
 // pages/index.js
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages, Contact } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
 import projects from './data/projects.json';
 import Image from 'next/image';
 import { SkillsCarousel } from './components/skill';
 import ContactForm from './components/ContactForm';
+
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');

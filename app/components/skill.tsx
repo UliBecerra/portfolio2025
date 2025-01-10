@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Image from 'next/image';
 
 
 const apiUrlmages = 'https://simpleicons.org/icons/';
@@ -20,7 +19,7 @@ const skills = [
   { name: 'PHP', image: 'php' },
 ];
 
-export const SkillsCarousel = (title: any) => {
+export const SkillsCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
