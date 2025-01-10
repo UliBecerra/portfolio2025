@@ -1,16 +1,18 @@
 // pages/index.js
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Sun, Moon, Languages, Contact } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
 import projects from './data/projects.json';
 import Image from 'next/image';
-
+import { SkillsCarousel } from './components/skill';
+import ContactForm from './components/ContactForm';
 const Portfolio = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [theme, setTheme] = useState('light'); // El estado para manejar el tema del sitio
+
   const [language, setLanguage] = useState('en'); // El estado para manejar el idioma del sitio
   const { t } = useTranslation(); // Hook para traducir textos
   const toggleLanguage = () => {
@@ -154,7 +156,7 @@ const Portfolio = () => {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/tuuser"
+            href="https://www.linkedin.com/in/aldo-ulises-becerra-casanova/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
@@ -162,7 +164,7 @@ const Portfolio = () => {
             <Linkedin size={24} />
           </a>
           <a
-            href="mailto:tu@email.com"
+            href="mailto:aldoulisesbc@gmail.com"
             className="p-2 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
           >
             <Mail size={24} />
@@ -174,7 +176,7 @@ const Portfolio = () => {
     {/* Projects Section */}
     <section
       id="projects"
-      className="py-12 px-4 bg-white dark:bg-slate-800"
+      className="py-12 px-4 bg-white dark:bg-slate-800 pt-24"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
@@ -184,7 +186,7 @@ const Portfolio = () => {
           {/* Project Card */}
           {
             projects.projects.map((project, index) => (
-              <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700" key={index}>
+              <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700 hover:shadow-white hover:shadow-md"  key={index}>
             {/* <div className="h-48 bg-slate-200 dark:bg-slate-600" /> */}
             <Image src={`https://raw.githubusercontent.com/UliBecerra/uli-beca-portfolio/refs/heads/main/public${project.image}`} alt={project.title} width={400} height={300} />
             <div className="p-6">
@@ -212,7 +214,7 @@ const Portfolio = () => {
           </div>
             ))
           }
-          <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700">
+          {/* <div className="bg-white rounded-lg shadow-md overflow-hidden dark:bg-slate-700">
             <div className="h-48 bg-slate-200 dark:bg-slate-600" />
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-slate-900 dark:text-slate-100">
@@ -236,11 +238,34 @@ const Portfolio = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
+    {/* skills section */}
+
+    <section id="skills" className="py-12 px-4 bg-white dark:bg-slate-900 pt-24">
+      <div className="max-w-6xl mx-auto ">
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+          {t('skills')}
+        </h2>
+        <SkillsCarousel  />
+      </div>
+    
+      
+    </section>
+
+    {/* contact section */}
+    <section id="contact" className="py-12 px-4 bg-white dark:bg-slate-900">
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+          {t('contactForm')}
+        </h2>
+      <ContactForm  t={t}  />
+      </section>
   </div>
+
+  
+
   
   );
 };
