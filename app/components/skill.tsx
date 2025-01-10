@@ -19,12 +19,8 @@ const skills = [
   { name: 'PHP', image: 'php' },
 ];
 
-export const SkillsCarousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 10,
-  };
+export const SkillsView = () => {
+ 
 
   return (
 

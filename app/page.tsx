@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import i18n  from './data/i18n';
 import projects from './data/projects.json';
 import Image from 'next/image';
-import { SkillsCarousel } from './components/skill';
+import { SkillsView } from './components/skill';
 import ContactForm from './components/ContactForm';
 
 const Portfolio = () => {
@@ -250,7 +250,7 @@ const Portfolio = () => {
       <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
           {t('skills')}
         </h2>
-        <SkillsCarousel  />
+        <SkillsView  />
       </div>
     
       

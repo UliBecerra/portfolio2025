@@ -1,6 +1,11 @@
+import { error } from 'console';
 import React, { useState } from 'react';
+import { TFunction } from 'i18next';
 
-const ContactForm = ( {t } : any) => {
+interface ChildProps {
+    t: TFunction; // Usamos TFunction para tipar la función de traducción
+  }
+const ContactForm : React.FC<ChildProps> = ({ t }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
