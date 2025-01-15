@@ -35,7 +35,10 @@ const ContactForm : React.FC<ChildProps> = ({ t }) => {
     axios.defaults.headers.post['Content-Type'] = 'application/json';
     axios
       .post(URL, formData)
-      .then((res) => console.log(res))
+      .then((res) => {console.log(res)
+        setFormStatus(t('contactSuccess'));
+        setIsSubmitting(false);
+      })
       .catch((err) => console.log(err));
    
   };
