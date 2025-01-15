@@ -24,6 +24,7 @@ i18n.use(initReactI18next).init({
         projectName: "Project Name",
         projectDescription: "Brief description of the project and technologies used.",
         viewMore: "View More",
+        contactSuccess: "Your message has been sent successfully. We'll get back to you as soon as possible.",
       },
     },
     es: {
@@ -46,6 +47,7 @@ i18n.use(initReactI18next).init({
         projectName: "Nombre del Proyecto",
         projectDescription: "Descripción breve del proyecto y las tecnologías utilizadas.",
         viewMore: "Ver Más",
+        contactSuccess: "Tu mensaje ha sido enviado con éxito. Lo haremos lo antes posible.",
       },
     },
   },
