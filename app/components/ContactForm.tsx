@@ -109,7 +109,7 @@ const ContactForm : React.FC<ChildProps> = ({ t }) => {
         </div>
 
         {formStatus && (
-          <div className={`text-center ${formStatus.includes('exitosamente') ? 'text-green-600' : 'text-red-600'}`}>
+          <div className={`text-center ${formStatus.includes('exitosamente') ? 'text-red-600' : 'text-green-600'}`}>
             {formStatus}
           </div>
         )}
