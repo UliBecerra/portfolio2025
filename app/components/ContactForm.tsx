@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { TFunction } from 'i18next';
-
+import axios from 'axios';
 interface ChildProps {
     t: TFunction; // Usamos TFunction para tipar la función de traducción
   }
+  const BASE_URL = 'https://formsubmit.co/ajax/'
+const EMAIL = 'aldoulisesbc@gmail.com'
 const ContactForm : React.FC<ChildProps> = ({ t }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,19 +30,14 @@ const ContactForm : React.FC<ChildProps> = ({ t }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    const URL =BASE_URL+EMAIL
     // Simulando la llamada a la API
-    try {
-      setTimeout(() => {
-        setFormStatus('Formulario enviado exitosamente! Te responderé pronto.');
-        setIsSubmitting(false);
-        setFormData({ name: '', email: '', message: '', resume: null });
-      }, 2000);
-    } catch (error) {
-      setFormStatus('Hubo un error al enviar el formulario.');
-      setIsSubmitting(false);
-      console.log(error);
-    }
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios
+      .post(URL, formData)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+   
   };
 
   return (
